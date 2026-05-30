@@ -197,7 +197,7 @@
     #services { background: var(--white); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.4rem;
     }
     .service-card {
@@ -274,8 +274,8 @@
     /* ── CERTIFICATIONS ── */
     #certifications { background: var(--warm-gray); }
     .certs-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+      gap: 1.2rem; justify-content: center;
     }
     .cert-card {
       background: white; border-radius: 14px; padding: 1.4rem;
@@ -390,7 +390,7 @@
     }
     @media (max-width: 600px) {
       section { padding: 60px 5%; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr !important; }
       .certs-grid { grid-template-columns: 1fr 1fr; }
       .suburbs-grid { grid-template-columns: 1fr; }
     }
