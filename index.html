@@ -536,7 +536,7 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-image">
-    <img src="images/about-pets.jpg" alt="Happy pets"/>
+    <img src="images/about-pets.jpg" alt="Happy pets" loading="lazy"/>
   </div>
   <div class="about-text">
     <span class="section-label">Who We Are</span>
@@ -560,7 +560,7 @@
     <p><em style="color: var(--blue-dark); font-weight: 600;">"When I'm with your pets, they're not a job — they're family."</em></p>
   </div>
   <div class="jason-image">
-    <img src="images/jason.jpg" alt="Jason with a happy dog"/>
+    <img src="images/jason.jpg" alt="Jason with a happy dog" loading="lazy"/>
   </div>
 </section>
 
@@ -640,7 +640,7 @@
     </div>
   </div>
   <div class="network-image">
-    <img src="images/network.jpg" alt="Professional pet care"/>
+    <img src="images/network.jpg" alt="Professional pet care" loading="lazy"/>
   </div>
 </section>
 
@@ -668,12 +668,7 @@
         <div class="suburb-tag">& surrounding areas</div>
       </div>
     </div>
-    <div class="area-map" id="mapContainer">
-      <!-- Static fallback shown until iframe loads -->
-      <a href="https://maps.google.com/maps?q=Durbanville,+Cape+Town" target="_blank" rel="noopener" id="mapFallback" style="display:block;width:100%;height:100%;position:relative;">
-        <img src="images/map-static.jpg" alt="Durbanville, Cape Town Metro service area" style="width:100%;height:100%;object-fit:cover;border-radius:20px;"/>
-        <span style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.2);">📍 Open in Google Maps</span>
-      </a>
+    <div class="area-map" id="mapContainer" style="background-image:url('images/map-static.jpg');background-size:cover;background-position:center;position:relative;">
       <iframe
         id="mapIframe"
         src="https://maps.google.com/maps?q=Durbanville,+Cape+Town&z=11&output=embed"
@@ -681,21 +676,23 @@
         allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
         title="Paws Unlimited service area map"
-        style="display:none;width:100%;height:100%;border:none;border-radius:20px;">
+        style="width:100%;height:100%;border:none;border-radius:20px;">
       </iframe>
+      <!-- Shown only if iframe fails to load after 6s -->
+      <a href="https://maps.google.com/maps?q=Durbanville,+Cape+Town" target="_blank" rel="noopener" id="mapFallback"
+        style="display:none;position:absolute;inset:0;align-items:flex-end;justify-content:center;padding-bottom:16px;">
+        <span style="background:var(--blue);color:white;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.2);">📍 Open in Google Maps</span>
+      </a>
     </div>
     <script>
       (function() {
         var iframe = document.getElementById('mapIframe');
         var fallback = document.getElementById('mapFallback');
         var loaded = false;
-        iframe.addEventListener('load', function() {
-          if (!loaded) { loaded = true; iframe.style.display = 'block'; fallback.style.display = 'none'; }
-        });
-        // If iframe hasn't loaded after 5s on slow connection, keep fallback visible
+        iframe.addEventListener('load', function() { loaded = true; });
         setTimeout(function() {
-          if (!loaded) { fallback.style.display = 'block'; }
-        }, 5000);
+          if (!loaded) { iframe.style.display = 'none'; fallback.style.display = 'flex'; }
+        }, 6000);
       })();
     </script>
   </div>
