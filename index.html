@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paws Unlimited | Professional Pet Sitting in Cape Town</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #5BA4CF;
+      --blue-dark:  #3D7FAA;
+      --blue-light: #D6EAF8;
+      --blue-xlight:#EBF5FB;
+      --coral:      #F4856A;
+      --coral-dark: #E06448;
+      --cream:      #FEFBF6;
+      --warm-gray:  #F5F0EA;
+      --text:       #2D3748;
+      --text-soft:  #718096;
+      --white:      #FFFFFF;
+      --shadow:     0 4px 24px rgba(91,164,207,0.10);
+      --shadow-md:  0 8px 32px rgba(91,164,207,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(254,251,246,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--blue-light);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 38px; height: 38px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .nav-logo-text {
+      display: flex; flex-direction: column; line-height: 1.2;
+    }
+    .nav-logo-text span:first-child {
+      font-weight: 800; font-size: 1rem; color: var(--text);
+    }
+    .nav-logo-text span:last-child {
+      font-size: 0.65rem; font-weight: 600; color: var(--blue);
+      letter-spacing: 0.03em;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text-soft);
+      font-weight: 600; font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--coral); color: white !important;
+      padding: 0.45rem 1.1rem; border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--coral-dark) !important; color: white !important; }
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--cream) 55%, var(--blue-xlight) 100%);
+    }
+    .hero-content {
+      max-width: 600px; position: relative; z-index: 2;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-light); color: var(--blue-dark);
+      padding: 0.35rem 0.9rem; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      margin-bottom: 1.2rem;
+    }
+    .hero-badge::before { content: '🐾'; }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900; line-height: 1.15;
+      color: var(--text); margin-bottom: 1.2rem;
+    }
+    h1 em {
+      font-style: normal; color: var(--blue);
+    }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text-soft);
+      margin-bottom: 2rem; max-width: 480px;
+    }
+    .hero-buttons {
+      display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 0.75rem 1.5rem; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem;
+      text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary {
+      background: var(--coral); color: white;
+      box-shadow: 0 4px 14px rgba(244,133,106,0.35);
+    }
+    .btn-primary:hover { background: var(--coral-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(244,133,106,0.45); }
+    .btn-whatsapp {
+      background: #25D366; color: white;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.30);
+    }
+    .btn-whatsapp:hover { background: #1ebe5b; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.40); }
+    .btn-outline {
+      background: transparent; color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+    .btn-outline:hover { background: var(--blue); color: white; }
+    .btn-outline-white {
+      background: transparent; color: white;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); border-color: white; }
+    .hero-image {
+      position: absolute; right: 4%; bottom: 0; top: 70px;
+      width: 45%; max-width: 600px;
+      display: flex; align-items: flex-end;
+    }
+    .hero-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 24px 24px 0 0;
+      opacity: 0.92;
+    }
+    .hero-stats {
+      display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num { font-size: 1.6rem; font-weight: 900; color: var(--blue); }
+    .stat-label { font-size: 0.78rem; color: var(--text-soft); font-weight: 600; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--coral);
+      margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800; color: var(--text);
+      margin-bottom: 0.8rem; line-height: 1.25;
+    }
+    .section-intro {
+      font-size: 1.05rem; color: var(--text-soft);
+      max-width: 560px; margin-bottom: 3rem;
+    }
+    .center { text-align: center; }
+    .center .section-intro { margin-left: auto; margin-right: auto; }
+
+    /* ── TRUST BAR ── */
+    #trust {
+      padding: 24px 5%;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      color: white; font-weight: 700; font-size: 0.9rem;
+    }
+    .trust-item span { font-size: 1.2rem; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+    .service-card {
+      background: var(--cream);
+      border: 1.5px solid var(--blue-light);
+      border-radius: 16px;
+      padding: 1.6rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.05rem; font-weight: 800; margin-bottom: 0.3rem;
+    }
+    .service-price {
+      font-size: 1.4rem; font-weight: 900; color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .service-price small {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-soft);
+    }
+    .service-desc {
+      font-size: 0.88rem; color: var(--text-soft); line-height: 1.6;
+    }
+    .service-note {
+      margin-top: 0.6rem;
+      font-size: 0.78rem; color: var(--blue-dark);
+      font-weight: 600; font-style: italic;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--blue-xlight);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-image {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4/5;
+    }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); color: var(--blue-dark);
+      padding: 0.4rem 0.9rem; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 1rem; box-shadow: var(--shadow);
+    }
+    .about-text p { color: var(--text-soft); margin-bottom: 1rem; }
+    .about-text strong { color: var(--text); }
+
+    /* ── MEET JASON ── */
+    #jason {
+      background: var(--white);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .jason-image {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4/5;
+      order: 2;
+    }
+    .jason-image img { width: 100%; height: 100%; object-fit: cover; }
+    .jason-text { order: 1; }
+    .jason-text p { color: var(--text-soft); margin-bottom: 1rem; }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications { background: var(--warm-gray); }
+    .certs-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .cert-card {
+      background: white; border-radius: 14px; padding: 1.4rem;
+      text-align: center; box-shadow: var(--shadow);
+      border-top: 4px solid var(--blue);
+    }
+    .cert-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .cert-card h4 { font-size: 0.9rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .cert-card p { font-size: 0.78rem; color: var(--text-soft); }
+    .cert-issuer {
+      display: inline-block; margin-top: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; color: var(--blue);
+      background: var(--blue-light); padding: 0.2rem 0.6rem; border-radius: 6px;
+    }
+
+    /* ── WEPETSIT ── */
+    #network {
+      background: var(--blue);
+      color: white;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    #network h2 { color: white; }
+    #network .section-label { color: var(--blue-light); }
+    #network .section-intro { color: rgba(255,255,255,0.8); }
+    .network-features {
+      display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;
+    }
+    .network-feature {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .network-feature-icon {
+      width: 36px; height: 36px; min-width: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .network-feature-text strong { display: block; color: white; font-size: 0.9rem; }
+    .network-feature-text span { font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .network-image {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      aspect-ratio: 1;
+    }
+    .network-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── SERVICE AREA ── */
+    #area { background: var(--white); }
+    .area-container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .area-map {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-md); aspect-ratio: 1;
+    }
+    .area-map iframe { width: 100%; height: 100%; border: none; border-radius: 20px; }
+    .suburbs-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    }
+    .suburb-tag {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; font-weight: 600; color: var(--text-soft);
+    }
+    .suburb-tag::before { content: '📍'; font-size: 0.75rem; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--warm-gray); }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+    }
+    .faq-item {
+      background: white; border-radius: 14px; padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .faq-item h4 {
+      font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .faq-item p { font-size: 0.88rem; color: var(--text-soft); }
+
+    /* ── CTA ── */
+    #contact {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      text-align: center; padding: 80px 5%;
+    }
+    #contact h2 { color: white; margin-bottom: 0.8rem; }
+    #contact p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.05rem; }
+    .contact-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: rgba(255,255,255,0.6);
+      padding: 2.5rem 5%; text-align: center;
+      font-size: 0.85rem;
+    }
+    footer strong { color: white; }
+    footer a { color: var(--blue-light); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-image { display: none; }
+      #about, #jason, #network, .area-container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .jason-image { order: -1; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: fixed;
+        top: 70px; left: 0; right: 0; background: var(--cream);
+        padding: 1.5rem 5%; border-bottom: 1px solid var(--blue-light);
+        gap: 1rem;
+      }
+      .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 5%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr 1fr; }
+      .suburbs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">🐾</div>
+    <div class="nav-logo-text">
+      <span>Paws Unlimited</span>
+      <span>IN PARTNERSHIP WITH WEPETSIT SA</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://wa.me/31625443838" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Professional Pet Sitting · Cape Town Metro</div>
+    <h1>Your pets deserve the <em>best care</em> — even when you're away.</h1>
+    <p class="hero-sub">
+      Paws Unlimited provides certified, compassionate pet care across the Cape Town Metro area.
+      Feeding visits, sleep-overs, full live-in care — we've got your fur family covered.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/31625443838" class="btn btn-whatsapp">
+        <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.267a.75.75 0 00.906.974l5.687-1.491A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.979-1.368l-.356-.212-3.374.885.896-3.28-.232-.367A9.728 9.728 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="#services" style="display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:0.9rem;color:var(--blue-dark);text-decoration:none;padding:0.75rem 0.25rem;transition:gap 0.2s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">See our services <span style="font-size:1.1rem;">→</span></a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Pets cared for</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5★</span>
+        <span class="stat-label">Average rating</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Certified & vetted</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80&fit=crop" alt="Happy dog being cared for"/>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust">
+  <div class="trust-item"><span>✅</span> Certified Professional Pet Sitters</div>
+  <div class="trust-item"><span>🏥</span> Pet First Aid Trained</div>
+  <div class="trust-item"><span>🔒</span> Fully Insured via WePetSit SA</div>
+  <div class="trust-item"><span>📍</span> Cape Town Metro</div>
+  <div class="trust-item"><span>💬</span> 24/7 WhatsApp Support</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="center">
+    <span class="section-label">What We Offer</span>
+    <h2>Flexible care for every pet & lifestyle</h2>
+    <p class="section-intro">Whether you need a quick check-in or a full live-in sitter, we have a service to match. All visits include feeding, fresh water, playtime, and a check-in report.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">☀️</div>
+      <h3>Single Daily Visit</h3>
+      <div class="service-price">R 149 <small>/ day</small></div>
+      <p class="service-desc">One visit per day — morning or evening — for pet care and feeding. Perfect for independent pets who just need a check-in.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🌅</div>
+      <h3>Double Daily Visit</h3>
+      <div class="service-price">R 268 <small>/ day</small></div>
+      <p class="service-desc">Two visits per day — once in the morning and once in the evening — for comprehensive daily care and feeding.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Day-Over Service</h3>
+      <div class="service-price">R 380 <small>/ day</small></div>
+      <p class="service-desc">A full 8-hour day-over during business hours. Includes all pet care and feeding. Morning through to afternoon.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🌙</div>
+      <h3>Sleep-Over Service</h3>
+      <div class="service-price">R 380 <small>/ night</small></div>
+      <p class="service-desc">A 12-hour overnight stay — evening through to morning. Includes all pet care and feeding.</p>
+      <p class="service-note">We cater for ourselves. No need to provide food for the sitter.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏡</div>
+      <h3>Full Live-In Service</h3>
+      <div class="service-price">R 480 <small>/ day</small></div>
+      <p class="service-desc">Your sitter moves in — a minimum of 20 hours of round-the-clock care. Billing starts on arrival. Perfect for anxious pets or extended trips.</p>
+      <p class="service-note">We cater for ourselves. No need to provide food for the sitter.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🦮</div>
+      <h3>Hourly Care & Dog Walking</h3>
+      <div class="service-price">R 180 <small>first hour</small></div>
+      <p class="service-desc">Tailored care with an initial rate of R 180 for the first hour, then R 35 per hour thereafter. Great for dog walks, vet trips, or flexible bookings.</p>
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top: 2.5rem;">
+    <a href="https://wa.me/31625443838?text=Hi%20Paws%20Unlimited!%20I'd%20like%20to%20get%20a%20quote." class="btn btn-whatsapp">
+      <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.267a.75.75 0 00.906.974l5.687-1.491A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.979-1.368l-.356-.212-3.374.885.896-3.28-.232-.367A9.728 9.728 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Get a Free Quote
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=700&q=80&fit=crop" alt="Happy pets"/>
+  </div>
+  <div class="about-text">
+    <span class="section-label">Who We Are</span>
+    <div class="about-tag">🤝 In partnership with WePetSit South Africa</div>
+    <h2>Cape Town's trusted pet care professionals</h2>
+    <p>At <strong>Paws Unlimited</strong>, we believe that your pets are family — and they deserve nothing less than exceptional care, even when life takes you away from home.</p>
+    <p>We are a <strong>professional pet sitting service</strong> based in the Durbanville area, proudly operating in partnership with <strong>WePetSit South Africa</strong> — the country's leading network of qualified, vetted pet care professionals.</p>
+    <p>Every member of our team is trained, certified, and passionate about animals. We don't just check a box — we build genuine relationships with the pets in our care, so that every visit is a tail-wagging highlight of their day.</p>
+    <a href="https://wa.me/31625443838" class="btn btn-primary" style="margin-top:0.5rem;">Book Now</a>
+  </div>
+</section>
+
+<!-- MEET JASON -->
+<section id="jason">
+  <div class="jason-text">
+    <span class="section-label">Our Founder</span>
+    <h2>Meet Jason Myburgh</h2>
+    <p>Jason's love for animals started long before Paws Unlimited ever existed. Growing up in the Western Cape, he was the kid who rescued stray cats, volunteered at local shelters on weekends, and always had a dog at his side.</p>
+    <p>After more than a decade building a career in the corporate world, Jason made a decision that changed everything — he chose to turn his lifelong passion into his profession. He founded <strong>Paws Unlimited</strong> to give Cape Town pet owners genuine peace of mind when they're away.</p>
+    <p>Today, Jason is a <strong>certified professional pet sitter</strong> through WePetSit South Africa, trained in pet first aid, and has personally cared for hundreds of animals across the Cape Town Metro area. His approach is simple: treat every pet as if it were his own.</p>
+    <p><em style="color: var(--blue-dark); font-weight: 600;">"When I'm with your pets, they're not a job — they're family."</em></p>
+  </div>
+  <div class="jason-image">
+    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=700&q=80&fit=crop" alt="Jason with a happy dog"/>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="center">
+    <span class="section-label">Qualifications</span>
+    <h2>Trained. Certified. Trustworthy.</h2>
+    <p class="section-intro">We don't just love animals — we're professionally trained to care for them. Every certification we hold represents a real commitment to your pet's safety and wellbeing.</p>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🏅</div>
+      <h4>Certified Professional Pet Sitter</h4>
+      <p>Recognised qualification in professional pet care, animal behaviour, and client management.</p>
+      <span class="cert-issuer">WePetSit South Africa</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🩺</div>
+      <h4>Pet First Aid & Emergency Response</h4>
+      <p>Trained to handle medical emergencies including CPR, wound care, choking, and heatstroke.</p>
+      <span class="cert-issuer">COAPE SA</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🧠</div>
+      <h4>Animal Behaviour Fundamentals</h4>
+      <p>Understanding of animal body language, stress signals, and safe handling of dogs and cats.</p>
+      <span class="cert-issuer">COAPE SA</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🐶</div>
+      <h4>Dog Handling & Care</h4>
+      <p>Specialised training in safe leash handling, multi-dog environments, and breed-specific care needs.</p>
+      <span class="cert-issuer">NPTSA</span>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top: 2rem; font-size: 0.85rem; color: var(--text-soft);">
+    ✏️ <em>Certifications will be updated once verified — placeholder certifications shown.</em>
+  </p>
+</section>
+
+<!-- WEPETSIT NETWORK -->
+<section id="network">
+  <div>
+    <span class="section-label">Our Network</span>
+    <h2>Backed by WePetSit South Africa</h2>
+    <p class="section-intro">Paws Unlimited operates in proud partnership with WePetSit South Africa — the country's largest professional pet sitting network.</p>
+    <div class="network-features">
+      <div class="network-feature">
+        <div class="network-feature-icon">🔍</div>
+        <div class="network-feature-text">
+          <strong>Vetted & Verified</strong>
+          <span>All WePetSit members are background-checked and independently verified.</span>
+        </div>
+      </div>
+      <div class="network-feature">
+        <div class="network-feature-icon">🎓</div>
+        <div class="network-feature-text">
+          <strong>Ongoing Training</strong>
+          <span>Regular training and mentorship keeps our standards at the highest level.</span>
+        </div>
+      </div>
+      <div class="network-feature">
+        <div class="network-feature-icon">🛡️</div>
+        <div class="network-feature-text">
+          <strong>Professional Standards</strong>
+          <span>WePetSit's code of conduct ensures consistent, professional service delivery.</span>
+        </div>
+      </div>
+      <div class="network-feature">
+        <div class="network-feature-icon">🌍</div>
+        <div class="network-feature-text">
+          <strong>National Network</strong>
+          <span>Access to SA's largest community of professional pet care providers.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="network-image">
+    <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=700&q=80&fit=crop" alt="Professional pet care"/>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
+  <div class="area-container">
+    <div>
+      <span class="section-label">Where We Work</span>
+      <h2>Serving the full Cape Town Metro</h2>
+      <p class="section-intro" style="margin-bottom: 1.5rem;">We're based in Durbanville and cover the wider Cape Town Metro area. Not sure if we cover your suburb? Just drop us a WhatsApp.</p>
+      <div class="suburbs-grid">
+        <div class="suburb-tag">Durbanville</div>
+        <div class="suburb-tag">Bellville</div>
+        <div class="suburb-tag">Kraaifontein</div>
+        <div class="suburb-tag">Brackenfell</div>
+        <div class="suburb-tag">Kuils River</div>
+        <div class="suburb-tag">Tygervalley</div>
+        <div class="suburb-tag">Panorama</div>
+        <div class="suburb-tag">Monte Vista</div>
+        <div class="suburb-tag">Goodwood</div>
+        <div class="suburb-tag">Parow</div>
+        <div class="suburb-tag">Milnerton</div>
+        <div class="suburb-tag">Table View</div>
+        <div class="suburb-tag">Blouberg</div>
+        <div class="suburb-tag">& surrounding areas</div>
+      </div>
+    </div>
+    <div class="area-map">
+      <iframe
+        src="https://maps.google.com/maps?q=Durbanville,+Cape+Town&z=11&output=embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Paws Unlimited service area map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="center">
+    <span class="section-label">FAQ</span>
+    <h2>Questions we get all the time</h2>
+    <p class="section-intro">If your question isn't answered here, just pop us a WhatsApp — we're always happy to chat.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Do you look after cats as well as dogs?</h4>
+      <p>Absolutely. We care for dogs, cats, and most other household pets. Just let us know what fur (or feathered!) friends you have and we'll make sure they're comfortable.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What does a visit include?</h4>
+      <p>Every visit includes feeding, fresh water, playtime or a walk, a general wellness check, and a WhatsApp update so you know your pet is happy and safe.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What if my pet has medication or special needs?</h4>
+      <p>No problem at all. We're trained to administer oral medication and can accommodate most dietary or care requirements. Just let us know during the booking consultation.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do I get started?</h4>
+      <p>It's simple — send us a WhatsApp with your dates and pet details. We'll arrange a free meet-and-greet so your pet can get comfortable with us before the booking begins.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Are you insured?</h4>
+      <p>Yes. Paws Unlimited operates within the WePetSit South Africa network, which upholds professional standards including appropriate insurance coverage for pet care services.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do I need to provide food for the sitter?</h4>
+      <p>Not at all. For overnight and live-in services, we bring everything we need and cater for ourselves entirely. You only need to provide your pet's food and supplies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact">
+  <span class="section-label" style="color: var(--blue-light);">Get In Touch</span>
+  <h2>Ready to book, or just have questions?</h2>
+  <p>Drop us a WhatsApp — we usually respond within the hour.</p>
+  <div class="contact-buttons">
+    <a href="https://wa.me/31625443838?text=Hi%20Paws%20Unlimited!%20I'd%20like%20to%20make%20a%20booking." class="btn btn-whatsapp">
+      <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.267a.75.75 0 00.906.974l5.687-1.491A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.979-1.368l-.356-.212-3.374.885.896-3.28-.232-.367A9.728 9.728 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Book on WhatsApp
+    </a>
+    <a href="mailto:hello@pawsunlimited.co.za" class="btn btn-outline-white">
+      ✉️ Send an Email
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Paws Unlimited</strong> · In partnership with WePetSit South Africa</p>
+  <p style="margin-top: 0.4rem;">Durbanville · Cape Town Metro · <a href="https://wa.me/31625443838">WhatsApp: +31 6 25 44 38 38</a></p>
+  <p style="margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.5;">© 2025 Paws Unlimited. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
