@@ -59,7 +59,7 @@ Open `index.html` directly in your browser - no build process or dependencies re
 
 ## Contact Information
 
-- **WhatsApp**: +31 6 25 44 38 38
+- **WhatsApp**: +27 81 739 0905
 - **Email**: hello@pawsunlimited.co.za
 - **Service Area**: Cape Town Metro (Durbanville, Bellville, Brackenfell, etc.)
 
