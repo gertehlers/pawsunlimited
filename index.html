@@ -182,7 +182,7 @@
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
       margin-bottom: 1.2rem;
     }
-    .hero-badge::before { content: '🐾'; }
+    .hero-badge svg { width: 14px; height: 14px; }
     h1 {
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 900; line-height: 1.15;
@@ -420,7 +420,7 @@
       display: flex; align-items: center; gap: 6px;
       font-size: 0.85rem; font-weight: 600; color: var(--text-soft);
     }
-    .suburb-tag::before { content: '📍'; font-size: 0.75rem; }
+    .suburb-tag::before { content: '·'; color: var(--blue); font-weight: 900; font-size: 1.1rem; line-height: 1; }
 
     /* ── FAQ ── */
     #faq { background: var(--warm-gray); }
@@ -483,7 +483,15 @@
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
-    <div class="nav-logo-icon">🐾</div>
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12" cy="15.5" rx="4.5" ry="3.8"/>
+        <ellipse cx="7.2" cy="11" rx="1.7" ry="2.2"/>
+        <ellipse cx="16.8" cy="11" rx="1.7" ry="2.2"/>
+        <ellipse cx="9.8" cy="8.2" rx="1.6" ry="2"/>
+        <ellipse cx="14.2" cy="8.2" rx="1.6" ry="2"/>
+      </svg>
+    </div>
     <div class="nav-logo-text">
       <span>Paws Unlimited</span>
       <span>IN PARTNERSHIP WITH WEPETSIT SA</span>
@@ -521,11 +529,11 @@
 <!-- HERO -->
 <section id="home">
   <div class="hero-content">
-    <div class="hero-badge">Professional Pet Sitting · Cape Town Metro</div>
-    <h1>Your pets deserve the <em>best care</em> — even when you're away.</h1>
+    <div class="hero-badge"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="15.5" rx="4.5" ry="3.8"/><ellipse cx="7.2" cy="11" rx="1.7" ry="2.2"/><ellipse cx="16.8" cy="11" rx="1.7" ry="2.2"/><ellipse cx="9.8" cy="8.2" rx="1.6" ry="2"/><ellipse cx="14.2" cy="8.2" rx="1.6" ry="2"/></svg> Professional Pet Sitting · Cape Town Metro</div>
+    <h1>Your pets deserve the <em>best care</em>, even when you're away.</h1>
     <p class="hero-sub">
       Paws Unlimited provides certified, compassionate pet care across the Cape Town Metro area.
-      Feeding visits, sleep-overs, full live-in care — we've got your fur family covered.
+      Feeding visits, sleep-overs, full live-in care. We've got your fur family covered.
     </p>
     <div class="hero-buttons">
       <a href="https://wa.me/27817390905" class="btn btn-whatsapp">
@@ -533,20 +541,6 @@
         Chat on WhatsApp
       </a>
       <a href="#services" style="display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:0.9rem;color:var(--blue-dark);text-decoration:none;padding:0.75rem 0.25rem;transition:gap 0.2s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">See our services <span style="font-size:1.1rem;">→</span></a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">500+</span>
-        <span class="stat-label">Pets cared for</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">5★</span>
-        <span class="stat-label">Average rating</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Certified & vetted</span>
-      </div>
     </div>
   </div>
   <div class="hero-image">
@@ -556,11 +550,11 @@
 
 <!-- TRUST BAR -->
 <div id="trust">
-  <div class="trust-item"><span>✅</span> Certified Professional Pet Sitters</div>
-  <div class="trust-item"><span>🏥</span> Pet First Aid Trained</div>
-  <div class="trust-item"><span>🔒</span> Fully Insured via WePetSit SA</div>
-  <div class="trust-item"><span>📍</span> Cape Town Metro</div>
-  <div class="trust-item"><span>💬</span> 24/7 WhatsApp Support</div>
+  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Certified Professional Pet Sitters</div>
+  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4M12 16h.01"/></svg> Pet First Aid Trained</div>
+  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Fully Insured via WePetSit SA</div>
+  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cape Town Metro</div>
+  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> 24/7 WhatsApp Support</div>
 </div>
 
 <!-- SERVICES -->
@@ -573,44 +567,44 @@
   <div class="services-grid">
 
     <div class="service-card">
-      <div class="service-icon">☀️</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
       <h3>Single Daily Visit</h3>
       <div class="service-price">R 149 <small>/ day</small></div>
-      <p class="service-desc">One visit per day — morning or evening — for pet care and feeding. Perfect for independent pets who just need a check-in.</p>
+      <p class="service-desc">One visit per day, morning or evening, for pet care and feeding. Perfect for independent pets who just need a check-in.</p>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🌅</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M4.93 4.93l1.41 1.41M2 12h2M19.07 4.93l-1.41 1.41M22 12h-2"/><path d="M5 17H2M22 17h-3M12 7a5 5 0 015 5H7a5 5 0 015-5z"/><line x1="2" y1="21" x2="22" y2="21"/></svg></div>
       <h3>Double Daily Visit</h3>
       <div class="service-price">R 268 <small>/ day</small></div>
-      <p class="service-desc">Two visits per day — once in the morning and once in the evening — for comprehensive daily care and feeding.</p>
+      <p class="service-desc">Two visits per day, once in the morning and once in the evening, for comprehensive daily care and feeding.</p>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🏠</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <h3>Day-Over Service</h3>
       <div class="service-price">R 380 <small>/ day</small></div>
       <p class="service-desc">A full 8-hour day-over during business hours. Includes all pet care and feeding. Morning through to afternoon.</p>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🌙</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
       <h3>Sleep-Over Service</h3>
       <div class="service-price">R 380 <small>/ night</small></div>
-      <p class="service-desc">A 12-hour overnight stay — evening through to morning. Includes all pet care and feeding.</p>
+      <p class="service-desc">A 12-hour overnight stay, evening through to morning. Includes all pet care and feeding.</p>
       <p class="service-note">We cater for ourselves. No need to provide food for the sitter.</p>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🏡</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><path d="M3 22h18"/><path d="M19 9.5V6h-2v1.5"/></svg></div>
       <h3>Full Live-In Service</h3>
       <div class="service-price">R 480 <small>/ day</small></div>
-      <p class="service-desc">Your sitter moves in — a minimum of 20 hours of round-the-clock care. Billing starts on arrival. Perfect for anxious pets or extended trips.</p>
+      <p class="service-desc">Your sitter moves in for a minimum of 20 hours of round-the-clock care. Billing starts on arrival. Perfect for anxious pets or extended trips.</p>
       <p class="service-note">We cater for ourselves. No need to provide food for the sitter.</p>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🦮</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><path d="M9 17h6M19 7c0 1.5-1 3-3 4l-3 1-2 5H9l1-4-3-2c-1.5-1-2-2.5-2-4a5 5 0 0110 0z"/><path d="M19 7l2-2"/></svg></div>
       <h3>Hourly Care & Dog Walking</h3>
       <div class="service-price">R 180 <small>first hour</small></div>
       <p class="service-desc">Tailored care with an initial rate of R 180 for the first hour, then R 35 per hour thereafter. Great for dog walks, vet trips, or flexible bookings.</p>
@@ -632,11 +626,11 @@
   </div>
   <div class="about-text">
     <span class="section-label">Who We Are</span>
-    <div class="about-tag">🤝 In partnership with WePetSit South Africa</div>
+    <div class="about-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5" transform="rotate(90 12 12)"/><path d="M6.5 11.5L4 14l2.5 2.5M17.5 11.5L20 14l-2.5 2.5M8 14h8"/></svg> In partnership with WePetSit South Africa</div>
     <h2>Cape Town's trusted pet care professionals</h2>
-    <p>At <strong>Paws Unlimited</strong>, we believe that your pets are family — and they deserve nothing less than exceptional care, even when life takes you away from home.</p>
-    <p>We are a <strong>professional pet sitting service</strong> based in the Durbanville area, proudly operating in partnership with <strong>WePetSit South Africa</strong> — the country's leading network of qualified, vetted pet care professionals.</p>
-    <p>Every member of our team is trained, certified, and passionate about animals. We don't just check a box — we build genuine relationships with the pets in our care, so that every visit is a tail-wagging highlight of their day.</p>
+    <p>At <strong>Paws Unlimited</strong>, we believe that your pets are family. They deserve nothing less than exceptional care, even when life takes you away from home.</p>
+    <p>We are a <strong>professional pet sitting service</strong> based in the Durbanville area, proudly operating in partnership with <strong>WePetSit South Africa</strong>, the country's leading network of qualified, vetted pet care professionals.</p>
+    <p>Every member of our team is trained, certified, and passionate about animals. We build genuine relationships with the pets in our care, so that every visit is a highlight of their day.</p>
     <a href="https://wa.me/27817390905" class="btn btn-primary" style="margin-top:0.5rem;">Book Now</a>
   </div>
 </section>
@@ -647,50 +641,50 @@
     <span class="section-label">Our Founder</span>
     <h2>Meet Jason Myburgh</h2>
     <p>Jason's love for animals started long before Paws Unlimited ever existed. Growing up in the Western Cape, he was the kid who rescued stray cats, volunteered at local shelters on weekends, and always had a dog at his side.</p>
-    <p>After more than a decade building a career in the corporate world, Jason made a decision that changed everything — he chose to turn his lifelong passion into his profession. He founded <strong>Paws Unlimited</strong> to give Cape Town pet owners genuine peace of mind when they're away.</p>
+    <p>After more than a decade building a career in the corporate world, Jason made the decision to turn his lifelong passion into his profession. He founded <strong>Paws Unlimited</strong> to give Cape Town pet owners genuine peace of mind when they're away.</p>
     <p>Today, Jason is a <strong>certified professional pet sitter</strong> through WePetSit South Africa, trained in pet first aid, and has personally cared for hundreds of animals across the Cape Town Metro area. His approach is simple: treat every pet as if it were his own.</p>
-    <p><em style="color: var(--blue-dark); font-weight: 600;">"When I'm with your pets, they're not a job — they're family."</em></p>
+    <p><em style="color: var(--blue-dark); font-weight: 600;">"When I'm with your pets, they're not a job. They're family."</em></p>
   </div>
   <div class="jason-image">
     <img src="images/jason.jpg" alt="Jason with a happy dog" loading="lazy"/>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
+<!-- CERTIFICATIONS (hidden until verified) -->
+<section id="certifications" style="display:none">
   <div class="center">
     <span class="section-label">Qualifications</span>
     <h2>Trained. Certified. Trustworthy.</h2>
-    <p class="section-intro">We don't just love animals — we're professionally trained to care for them. Every certification we hold represents a real commitment to your pet's safety and wellbeing.</p>
+    <p class="section-intro">We don't just love animals. We're professionally trained to care for them. Every certification we hold represents a real commitment to your pet's safety and wellbeing.</p>
   </div>
   <div class="certs-grid">
     <div class="cert-card">
-      <div class="cert-icon">🏅</div>
+      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
       <h4>Certified Professional Pet Sitter</h4>
       <p>Recognised qualification in professional pet care, animal behaviour, and client management.</p>
       <span class="cert-issuer">WePetSit South Africa</span>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">🩺</div>
+      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6v0a6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3"/><path d="M8 15v1a6 6 0 006 6v0a6 6 0 006-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
       <h4>Pet First Aid & Emergency Response</h4>
       <p>Trained to handle medical emergencies including CPR, wound care, choking, and heatstroke.</p>
       <span class="cert-issuer">COAPE SA</span>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">🧠</div>
+      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 017 4.5v0A2.5 2.5 0 014.5 7v0A2.5 2.5 0 012 9.5v5A2.5 2.5 0 004.5 17v0A2.5 2.5 0 007 19.5v0A2.5 2.5 0 009.5 22h5a2.5 2.5 0 002.5-2.5v0a2.5 2.5 0 002.5-2.5v0a2.5 2.5 0 002.5-2.5v-5A2.5 2.5 0 0019.5 7v0A2.5 2.5 0 0017 4.5v0A2.5 2.5 0 0014.5 2z"/><path d="M12 2v20M2 12h20"/></svg></div>
       <h4>Animal Behaviour Fundamentals</h4>
       <p>Understanding of animal body language, stress signals, and safe handling of dogs and cats.</p>
       <span class="cert-issuer">COAPE SA</span>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">🐶</div>
+      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 2.028"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 2.028"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75z"/><path d="M4.42 11.247A13.152 13.152 0 004 14.556C4 18.728 7.582 22 12 22s8-3.272 8-7.444c0-1.26-.33-2.547-.888-3.69"/></svg></div>
       <h4>Dog Handling & Care</h4>
       <p>Specialised training in safe leash handling, multi-dog environments, and breed-specific care needs.</p>
       <span class="cert-issuer">NPTSA</span>
     </div>
   </div>
   <p style="text-align:center; margin-top: 2rem; font-size: 0.85rem; color: var(--text-soft);">
-    ✏️ <em>Certifications will be updated once verified — placeholder certifications shown.</em>
+    <em>Certifications will be updated once verified. Placeholder certifications shown.</em>
   </p>
 </section>
 
@@ -699,31 +693,31 @@
   <div>
     <span class="section-label">Our Network</span>
     <h2>Backed by WePetSit South Africa</h2>
-    <p class="section-intro">Paws Unlimited operates in proud partnership with WePetSit South Africa — the country's largest professional pet sitting network.</p>
+    <p class="section-intro">Paws Unlimited operates in proud partnership with WePetSit South Africa, the country's largest professional pet sitting network.</p>
     <div class="network-features">
       <div class="network-feature">
-        <div class="network-feature-icon">🔍</div>
+        <div class="network-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="network-feature-text">
           <strong>Vetted & Verified</strong>
           <span>All WePetSit members are background-checked and independently verified.</span>
         </div>
       </div>
       <div class="network-feature">
-        <div class="network-feature-icon">🎓</div>
+        <div class="network-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"/></svg></div>
         <div class="network-feature-text">
           <strong>Ongoing Training</strong>
           <span>Regular training and mentorship keeps our standards at the highest level.</span>
         </div>
       </div>
       <div class="network-feature">
-        <div class="network-feature-icon">🛡️</div>
+        <div class="network-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="network-feature-text">
           <strong>Professional Standards</strong>
           <span>WePetSit's code of conduct ensures consistent, professional service delivery.</span>
         </div>
       </div>
       <div class="network-feature">
-        <div class="network-feature-icon">🌍</div>
+        <div class="network-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <div class="network-feature-text">
           <strong>National Network</strong>
           <span>Access to SA's largest community of professional pet care providers.</span>
@@ -773,7 +767,7 @@
       <!-- Shown only if iframe fails to load after 6s -->
       <a href="https://maps.google.com/maps?q=Durbanville,+Cape+Town" target="_blank" rel="noopener" id="mapFallback"
         style="display:none;position:absolute;inset:0;align-items:flex-end;justify-content:center;padding-bottom:16px;">
-        <span style="background:var(--blue);color:white;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.2);">📍 Open in Google Maps</span>
+        <span style="background:var(--blue);color:white;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.2);display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Open in Google Maps</span>
       </a>
     </div>
     <script>
@@ -795,7 +789,7 @@
   <div class="center">
     <span class="section-label">FAQ</span>
     <h2>Questions we get all the time</h2>
-    <p class="section-intro">If your question isn't answered here, just pop us a WhatsApp — we're always happy to chat.</p>
+    <p class="section-intro">If your question isn't answered here, just pop us a WhatsApp. We're always happy to chat.</p>
   </div>
   <div class="faq-grid">
     <div class="faq-item">
@@ -812,7 +806,7 @@
     </div>
     <div class="faq-item">
       <h4>How do I get started?</h4>
-      <p>It's simple — send us a WhatsApp with your dates and pet details. We'll arrange a free meet-and-greet so your pet can get comfortable with us before the booking begins.</p>
+      <p>It's simple. Send us a WhatsApp with your dates and pet details. We'll arrange a free meet-and-greet so your pet can get comfortable with us before the booking begins.</p>
     </div>
     <div class="faq-item">
       <h4>Are you insured?</h4>
@@ -829,14 +823,14 @@
 <section id="contact">
   <span class="section-label" style="color: var(--blue-light);">Get In Touch</span>
   <h2>Ready to book, or just have questions?</h2>
-  <p>Drop us a WhatsApp — we usually respond within the hour.</p>
+  <p>Drop us a WhatsApp. We usually respond within the hour.</p>
   <div class="contact-buttons">
     <a href="https://wa.me/27817390905?text=Hi%20Paws%20Unlimited!%20I'd%20like%20to%20make%20a%20booking." class="btn btn-whatsapp">
       <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.267a.75.75 0 00.906.974l5.687-1.491A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.979-1.368l-.356-.212-3.374.885.896-3.28-.232-.367A9.728 9.728 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
       Book on WhatsApp
     </a>
-    <a href="mailto:hello@pawsunlimited.co.za" class="btn btn-outline-white">
-      ✉️ Send an Email
+    <a href="mailto:jason@pawsunlimited.co.za" class="btn btn-outline-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Send an Email
     </a>
   </div>
 </section>
