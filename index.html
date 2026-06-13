@@ -353,25 +353,17 @@
     .jason-text { order: 1; }
     .jason-text p { color: var(--text-soft); margin-bottom: 1rem; }
 
-    /* ── CERTIFICATIONS ── */
-    #certifications { background: var(--warm-gray); }
-    .certs-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
-      gap: 1.2rem; justify-content: center;
+    /* ── JASON CERT BADGE ── */
+    .jason-cert {
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid var(--blue-light);
     }
-    .cert-card {
-      background: white; border-radius: 14px; padding: 1.4rem;
-      text-align: center; box-shadow: var(--shadow);
-      border-top: 4px solid var(--blue);
-    }
-    .cert-icon { font-size: 2rem; margin-bottom: 0.6rem; }
-    .cert-card h4 { font-size: 0.9rem; font-weight: 800; margin-bottom: 0.3rem; }
-    .cert-card p { font-size: 0.78rem; color: var(--text-soft); }
-    .cert-issuer {
-      display: inline-block; margin-top: 0.5rem;
-      font-size: 0.72rem; font-weight: 700; color: var(--blue);
-      background: var(--blue-light); padding: 0.2rem 0.6rem; border-radius: 6px;
-    }
+    .jason-cert a { display: block; flex-shrink: 0; }
+    .jason-cert img { width: 220px; height: auto; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .jason-cert a:hover img { transform: scale(1.05); opacity: 0.85; }
+    .jason-cert-text strong { display: block; font-size: 0.95rem; color: var(--text); margin-bottom: 0.3rem; }
+    .jason-cert-text p { font-size: 0.82rem; color: var(--text-soft); margin: 0; }
 
     /* ── WEPETSIT ── */
     #network {
@@ -473,7 +465,6 @@
     @media (max-width: 600px) {
       section { padding: 60px 5%; }
       .services-grid { grid-template-columns: 1fr !important; }
-      .certs-grid { grid-template-columns: 1fr 1fr; }
       .suburbs-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -643,48 +634,19 @@
     <p>After more than a decade building a career in the corporate world, Jason made the decision to turn his lifelong passion into his profession. He founded <strong>Paws Unlimited</strong> to give Cape Town pet owners genuine peace of mind when they're away.</p>
     <p>Today, Jason is a <strong>certified professional pet sitter</strong> through WePetSit South Africa, trained in pet first aid, and has personally cared for hundreds of animals across the Cape Town Metro area. His approach is simple: treat every pet as if it were his own.</p>
     <p><em style="color: var(--blue-dark); font-weight: 600;">"When I'm with your pets, they're not a job. They're family."</em></p>
+    <div class="jason-cert">
+      <a href="assets/Jason Myburgh PSI - Certificate 2026.pdf" target="_blank" rel="noopener" aria-label="View PSI Certificate">
+        <img src="images/Certified PetSitter Logo 2026_X Small.png" alt="PSI Certified Pet Sitter 2026"/>
+      </a>
+      <div class="jason-cert-text">
+        <strong>Trained. Certified. Trustworthy.</strong>
+        <p>PSI-certified professional pet sitter, with training in pet first aid and animal care.</p>
+      </div>
+    </div>
   </div>
   <div class="jason-image">
     <img src="images/jason.jpg" alt="Jason with a happy dog" loading="lazy"/>
   </div>
-</section>
-
-<!-- CERTIFICATIONS (hidden until verified) -->
-<section id="certifications" style="display:none">
-  <div class="center">
-    <span class="section-label">Qualifications</span>
-    <h2>Trained. Certified. Trustworthy.</h2>
-    <p class="section-intro">We don't just love animals. We're professionally trained to care for them. Every certification we hold represents a real commitment to your pet's safety and wellbeing.</p>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card">
-      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-      <h4>Certified Professional Pet Sitter</h4>
-      <p>Recognised qualification in professional pet care, animal behaviour, and client management.</p>
-      <span class="cert-issuer">WePetSit South Africa</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6v0a6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3"/><path d="M8 15v1a6 6 0 006 6v0a6 6 0 006-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
-      <h4>Pet First Aid & Emergency Response</h4>
-      <p>Trained to handle medical emergencies including CPR, wound care, choking, and heatstroke.</p>
-      <span class="cert-issuer">COAPE SA</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 017 4.5v0A2.5 2.5 0 014.5 7v0A2.5 2.5 0 012 9.5v5A2.5 2.5 0 004.5 17v0A2.5 2.5 0 007 19.5v0A2.5 2.5 0 009.5 22h5a2.5 2.5 0 002.5-2.5v0a2.5 2.5 0 002.5-2.5v0a2.5 2.5 0 002.5-2.5v-5A2.5 2.5 0 0019.5 7v0A2.5 2.5 0 0017 4.5v0A2.5 2.5 0 0014.5 2z"/><path d="M12 2v20M2 12h20"/></svg></div>
-      <h4>Animal Behaviour Fundamentals</h4>
-      <p>Understanding of animal body language, stress signals, and safe handling of dogs and cats.</p>
-      <span class="cert-issuer">COAPE SA</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 2.028"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 2.028"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75z"/><path d="M4.42 11.247A13.152 13.152 0 004 14.556C4 18.728 7.582 22 12 22s8-3.272 8-7.444c0-1.26-.33-2.547-.888-3.69"/></svg></div>
-      <h4>Dog Handling & Care</h4>
-      <p>Specialised training in safe leash handling, multi-dog environments, and breed-specific care needs.</p>
-      <span class="cert-issuer">NPTSA</span>
-    </div>
-  </div>
-  <p style="text-align:center; margin-top: 2rem; font-size: 0.85rem; color: var(--text-soft);">
-    <em>Certifications will be updated once verified. Placeholder certifications shown.</em>
-  </p>
 </section>
 
 <!-- WEPETSIT NETWORK -->
